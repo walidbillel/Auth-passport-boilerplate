@@ -13,9 +13,9 @@ require('./config/passport')(passport);
 
 
 // connect to db
-const MongoDB_URI = process.env.MongoDB_URI || "mongodb://localhost/auth-pass"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/auth-pass"
 mongoose
-  .connect(MongoDB_URI, { useNewUrlParser: true })
+  .connect(MONGODB_URI, { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected..."))
   .catch(err => console.log(err));
 
