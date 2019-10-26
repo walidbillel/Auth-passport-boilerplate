@@ -10,9 +10,12 @@ const PORT = 5000 || process.env.PORT;
 
 // Passport config 
 require('./config/passport')(passport);
+
+
 // connect to db
+const MongoDB_URI = process.env.MongoDB_URI || "mongodb://localhost/auth-pass"
 mongoose
-  .connect("mongodb://localhost/auth-pass", { useNewUrlParser: true })
+  .connect(MongoDB_URI, { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected..."))
   .catch(err => console.log(err));
 
