@@ -7,7 +7,7 @@ const passport = require('passport')
 const app = express();
 
 const PORT = 5000 || process.env.PORT;
-
+require('dotenv').config()
 // Passport config 
 require('./config/passport')(passport);
 
